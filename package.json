@@ -13,7 +13,10 @@
   ],
   "license": "MIT",
   "author": "Lim Yuan Qing",
-  "repository": "yuanqing/macos-keyboard-shortcuts",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/yuanqing/macos-keyboard-shortcuts.git"
+  },
   "files": [
     "lib"
   ],
