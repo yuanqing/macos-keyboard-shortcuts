@@ -35,6 +35,7 @@ Set 11 keyboard shortcuts
 ```
 
 - The path to each menu item is specified via a nested JSON object.
+- The root keys correspond to the “domain” of the application.
 - The keys in each shortcut are separated by a space.
 - Use `cmd`, `ctrl`, `opt`, and `shift` for modifier keys, and `up`, `down`, `left`, and `right` for arrow keys.
 
