@@ -7,13 +7,14 @@ import { outputBashCommands } from '../common/output-bash-commands'
 import { parseConfig } from '../common/parse-config'
 
 export async function set (file, script) {
-  if (typeof file !== 'undefined' && await exists(file) === false) {
+  if (typeof file !== 'undefined' && (await exists(file)) === false) {
     return Promise.reject(new Error('File does not exist'))
   }
   try {
-    const json = typeof file !== 'undefined'
-      ? await readFile(file, 'utf8')
-      : await getStdin()
+    const json =
+      typeof file !== 'undefined'
+        ? await readFile(file, 'utf8')
+        : await getStdin()
     const config = JSON.parse(json)
     const keyboardShortcuts = parseConfig(config)
     const bashCommands = createBashCommands(keyboardShortcuts)
