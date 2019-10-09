@@ -1,6 +1,5 @@
+import { DEFAULTS_KEY } from './constants'
 import { KEYBOARD_KEY_MAP, ESCAPE_KEY } from './keyboard'
-
-export const DEFAULTS_KEY = 'NSUserKeyEquivalents'
 
 export function createBashCommands (keyboardShortcuts) {
   const result = []
