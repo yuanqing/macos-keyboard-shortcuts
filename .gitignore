@@ -1,0 +1,6 @@
+.DS_Store
+*.log
+lib/
+node_modules/
+shortcuts.json
+shortcuts.sh

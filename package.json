@@ -1,0 +1,66 @@
+{
+  "name": "macos-keyboard-shortcuts",
+  "version": "0.0.0",
+  "description": "A command-line utility to manage keyboard shortcuts for macOS",
+  "keywords": [
+    "cli",
+    "keyboard",
+    "keyboard-shortcuts",
+    "mac",
+    "macos",
+    "osx",
+    "shortcuts"
+  ],
+  "license": "MIT",
+  "author": "Lim Yuan Qing",
+  "repository": "yuanqing/macos-keyboard-shortcuts",
+  "files": [
+    "lib"
+  ],
+  "bin": {
+    "macos-keyboard-shortcuts": "lib/cli.js"
+  },
+  "scripts": {
+    "build": "babel src --delete-dir-on-start --out-dir lib",
+    "clean": "rimraf '*.log' lib",
+    "fix": "prettier-standard 'src/**/*.js'",
+    "lint": "standard 'src/**/*.js'",
+    "reset": "yarn run clean && rimraf node_modules yarn.lock && yarn install && yarn run build",
+    "watch": "chokidar src --command 'yarn run build' --initial --silent"
+  },
+  "dependencies": {
+    "execa": "^2.0.5",
+    "fs-extra": "^8.1.0",
+    "get-stdin": "^7.0.0",
+    "p-each-series": "^2.1.0",
+    "sade": "^1.6.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.3",
+    "@babel/core": "^7.6.3",
+    "@babel/plugin-transform-modules-commonjs": "^7.6.0",
+    "chokidar-cli": "^2.0.0",
+    "husky": "^3.0.8",
+    "lint-staged": "^9.4.2",
+    "prettier-standard": "^15.0.1",
+    "rimraf": "^3.0.0",
+    "standard": "^14.3.1"
+  },
+  "babel": {
+    "plugins": [
+      "@babel/plugin-transform-modules-commonjs"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "standard",
+      "prettier-standard",
+      "git add"
+    ]
+  }
+}
