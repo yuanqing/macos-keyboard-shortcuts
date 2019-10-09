@@ -32,7 +32,7 @@
     "watch": "chokidar src --command 'yarn run build' --initial --silent"
   },
   "dependencies": {
-    "execa": "^2.0.5",
+    "execa": "^2.1.0",
     "fs-extra": "^8.1.0",
     "get-stdin": "^7.0.0",
     "p-each-series": "^2.1.0",
