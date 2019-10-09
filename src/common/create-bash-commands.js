@@ -1,12 +1,12 @@
 import { KEYBOARD_KEY_MAP, ESCAPE_KEY } from './keyboard'
 
-export const KEY = 'NSUserKeyEquivalents'
+export const DEFAULTS_KEY = 'NSUserKeyEquivalents'
 
 export function createBashCommands (keyboardShortcuts) {
   const result = []
   keyboardShortcuts.forEach(function ({ domain, menu, shortcut }) {
     result.push(
-      `defaults write ${domain} ${KEY} -dict-add "${createMenu(
+      `defaults write ${domain} ${DEFAULTS_KEY} -dict-add "${createMenu(
         menu
       )}" "${createShortcut(shortcut)}"`
     )
