@@ -1,7 +1,10 @@
-import { DEFAULTS_KEY } from './constants'
+import { commandFactory } from '../command-factory'
+import { DEFAULTS_KEY } from '../constants'
 import { KEYBOARD_KEY_MAP, ESCAPE_KEY } from './keyboard'
+import { parseConfig } from './parse-config'
 
-export function createBashCommands (keyboardShortcuts) {
+export const set = commandFactory(function (config) {
+  const keyboardShortcuts = parseConfig(config)
   const result = []
   keyboardShortcuts.forEach(function ({ domain, menu, shortcut }) {
     result.push(
@@ -15,7 +18,7 @@ export function createBashCommands (keyboardShortcuts) {
     `echo "Set ${length} keyboard shortcut${length === 1 ? '' : 's'}"`
   )
   return result
-}
+})
 
 function createMenu (menu) {
   return menu

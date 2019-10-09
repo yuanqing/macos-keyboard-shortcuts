@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
 import sade from 'sade'
-import { set, unset } from './commands/set'
+import { set } from './set/set'
+import { unset } from './unset/unset'
 
 sade('macos-keyboard-shortcuts')
   .command('set [file]')
