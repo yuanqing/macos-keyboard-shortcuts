@@ -1,6 +1,6 @@
 import { commandFactory } from '../command-factory'
 import { DEFAULTS_KEY } from '../constants'
-import { KEYBOARD_KEY_MAP, ESCAPE_KEY } from './keyboard'
+import { ESCAPE_KEY, KEYBOARD_KEY_MAP, NULL } from './keyboard'
 import { parseConfig } from './parse-config'
 
 export const set = commandFactory(function (config) {
@@ -31,6 +31,9 @@ function createMenu (menu) {
 function createShortcut (shortcut) {
   return shortcut
     .map(function (keyboardKey) {
+      if (keyboardKey === '') {
+        return NULL
+      }
       const character = KEYBOARD_KEY_MAP[keyboardKey]
       return typeof character !== 'undefined' ? character : keyboardKey
     })

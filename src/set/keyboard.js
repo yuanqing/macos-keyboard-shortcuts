@@ -1,4 +1,5 @@
 export const ESCAPE_KEY = '\u001b'
+export const NULL = '\\0'
 
 export const KEYBOARD_KEY_MAP = {
   cmd: '@',
