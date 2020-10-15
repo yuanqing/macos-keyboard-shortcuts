@@ -1,7 +1,7 @@
-import { commandFactory } from '../command-factory'
-import { DEFAULTS_KEY } from '../constants'
+const commandFactory = require('../command-factory')
+const DEFAULTS_KEY = require('../constants')
 
-export const unset = commandFactory(function (config) {
+const unset = commandFactory(function (config) {
   const result = []
   for (const domain in config) {
     result.push(`defaults delete ${domain} ${DEFAULTS_KEY}`)
@@ -9,3 +9,5 @@ export const unset = commandFactory(function (config) {
   result.push('echo "Unset keyboard shortcuts"')
   return result
 })
+
+module.exports = unset

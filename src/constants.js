@@ -1,1 +1,1 @@
-export const DEFAULTS_KEY = 'NSUserKeyEquivalents'
+module.exports = 'NSUserKeyEquivalents'

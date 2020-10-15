@@ -1,7 +1,7 @@
-import execa from 'execa'
-import pEachSeries from 'p-each-series'
+const execa = require('execa')
+const pEachSeries = require('p-each-series')
 
-export function executeBashCommands (bashCommands) {
+function executeBashCommands (bashCommands) {
   return pEachSeries(bashCommands, async function (bashCommand) {
     const { stdout } = await execa.command(bashCommand, { shell: true })
     if (stdout.length !== 0) {
@@ -9,3 +9,5 @@ export function executeBashCommands (bashCommands) {
     }
   })
 }
+
+module.exports = executeBashCommands

@@ -1,10 +1,10 @@
-# macos-keyboard-shortcuts [![npm Version](https://img.shields.io/npm/v/macos-keyboard-shortcuts)](https://www.npmjs.org/package/macos-keyboard-shortcuts) [![Build Status](https://img.shields.io/travis/yuanqing/macos-keyboard-shortcuts.svg)](https://travis-ci.org/yuanqing/macos-keyboard-shortcuts)
+# macos-keyboard-shortcuts [![npm Version](https://img.shields.io/npm/v/macos-keyboard-shortcuts?cacheSeconds=1800)](https://www.npmjs.org/package/macos-keyboard-shortcuts) [![build](https://github.com/yuanqing/macos-keyboard-shortcuts/workflows/build/badge.svg)](https://github.com/yuanqing/macos-keyboard-shortcuts/actions?query=workflow%3Abuild)
 
-> A command-line utility to set application-specific keyboard shortcuts for macOS
+> A CLI to set application-specific keyboard shortcuts for macOS
 
 ## Quick start
 
-Requires [Node.js](https://nodejs.org/).
+*Requires [Node.js](https://nodejs.org/).*
 
 ```
 $ cat shortcuts.json
@@ -25,7 +25,7 @@ $ cat shortcuts.json
         "Distribute Layers Up": "cmd shift u",
         "Distribute Layers Down": "cmd shift d"
       },
-      "Move Layers": "cmd shift m",
+      "Move Layers": "cmd shift m"
     }
   }
 }
@@ -41,8 +41,8 @@ Set 11 keyboard shortcuts
 
 ## Usage
 
+<!-- ``` markdown-interpolate: node src/cli.js --help -->
 ```
-$ macos-keyboard-shortcuts --help
 
   Usage
     $ macos-keyboard-shortcuts <command> [options]
@@ -60,6 +60,7 @@ $ macos-keyboard-shortcuts --help
     -h, --help       Displays this message
 
 ```
+<!-- ``` end -->
 
 ## Installation
 
@@ -69,4 +70,4 @@ $ npm install --global macos-keyboard-shortcuts
 
 ## License
 
-[MIT](LICENSE.md)
+[MIT](/LICENSE.md)

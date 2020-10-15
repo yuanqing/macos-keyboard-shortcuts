@@ -1,6 +1,8 @@
-export function outputBashCommands (bashCommands) {
+function outputBashCommands (bashCommands) {
   console.log('#!/bin/bash')
   bashCommands.forEach(function (bashCommand) {
     console.log(bashCommand)
   })
 }
+
+module.exports = outputBashCommands

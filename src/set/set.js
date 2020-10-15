@@ -1,9 +1,9 @@
-import { commandFactory } from '../command-factory'
-import { DEFAULTS_KEY } from '../constants'
-import { ESCAPE_KEY, KEYBOARD_KEY_MAP, NULL } from './keyboard'
-import { parseConfig } from './parse-config'
+const commandFactory = require('../command-factory')
+const DEFAULTS_KEY = require('../constants')
+const { ESCAPE_KEY, KEYBOARD_KEY_MAP, NULL } = require('./keyboard')
+const parseConfig = require('./parse-config')
 
-export const set = commandFactory(function (config) {
+const set = commandFactory(function (config) {
   const keyboardShortcuts = parseConfig(config)
   const result = []
   keyboardShortcuts.forEach(function ({ domain, menu, shortcut }) {
@@ -39,3 +39,5 @@ function createShortcut (shortcut) {
     })
     .join('')
 }
+
+module.exports = set

@@ -1,4 +1,4 @@
-export function parseConfig (config) {
+function parseConfig (config) {
   const result = []
   for (const domain in config) {
     const shortcuts = config[domain]
@@ -24,3 +24,5 @@ function parseItem (domain, shortcuts, menu, result) {
     parseItem(domain, shortcuts[key], [...menu, key], result)
   }
 }
+
+module.exports = parseConfig

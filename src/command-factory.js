@@ -1,11 +1,11 @@
-import { exists, readFile } from 'fs-extra'
-import getStdin from 'get-stdin'
-import { executeBashCommands } from './execute-bash-commands'
-import { outputBashCommands } from './output-bash-commands'
+const { pathExists, readFile } = require('fs-extra')
+const getStdin = require('get-stdin')
+const executeBashCommands = require('./execute-bash-commands')
+const outputBashCommands = require('./output-bash-commands')
 
-export function commandFactory (createBashCommands) {
+function commandFactory (createBashCommands) {
   return async function set (file, script) {
-    if (typeof file !== 'undefined' && (await exists(file)) === false) {
+    if (typeof file !== 'undefined' && (await pathExists(file)) === false) {
       return Promise.reject(new Error('File does not exist'))
     }
     try {
@@ -25,3 +25,5 @@ export function commandFactory (createBashCommands) {
     }
   }
 }
+
+module.exports = commandFactory
