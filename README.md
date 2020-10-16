@@ -29,14 +29,15 @@ $ cat shortcuts.json
     }
   }
 }
-$ npm install --global macos-keyboard-shortcuts
-$ macos-keyboard-shortcuts set shortcuts.json
+$ npx macos-keyboard-shortcuts set shortcuts.json
 Set 11 keyboard shortcuts
 ```
 
+See that:
+
 - The path to each menu item is specified via a nested JSON object.
-- The root keys correspond to the “domain” of the application.
-- The keys in each shortcut are separated by a space.
+- The root keys correspond to the “domain” of the macOS application.
+- The keyboard keys in each shortcut are separated by a space.
 - Use `cmd`, `ctrl`, `opt`, and `shift` for modifier keys, and `up`, `down`, `left`, and `right` for arrow keys.
 
 ## Usage
