@@ -1,5 +1,6 @@
-function parseConfig (config) {
-  const result = []
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'parseConfi... Remove this comment to see the full error message
+function parseConfig (config: any) {
+  const result: any = []
   for (const domain in config) {
     const shortcuts = config[domain]
     for (const key in shortcuts) {
@@ -11,7 +12,7 @@ function parseConfig (config) {
 
 const singleSpaceRegex = /\s/
 
-function parseItem (domain, shortcuts, menu, result) {
+function parseItem (domain: any, shortcuts: any, menu: any, result: any) {
   if (typeof shortcuts === 'string') {
     result.push({
       domain,
