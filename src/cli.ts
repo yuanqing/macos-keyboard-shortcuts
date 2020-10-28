@@ -1,28 +1,23 @@
 #!/usr/bin/env node
 
-const sade = require('sade')
-// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'set'.
-const set = require('./set/set')
-// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'unset'.
-const unset = require('./unset/unset')
+import * as sade from 'sade'
+
+import { set } from './set'
+import { unset } from './unset'
 
 sade('macos-keyboard-shortcuts')
   .command('set [file]')
   .describe('Sets the keyboard shortcuts as defined in the specified file')
-  .option('-s, --script', 'Prints a bash script')
-  .action(async function (file: any, {
-  script
-}: any) {
+  .option('-s, --script', 'Prints a shell script', false)
+  .action(async function (file: string, { script }: { script: boolean }) {
     await set(file, script)
   })
   .example('set shortcuts.json')
   .example('set shortcuts.json --script')
   .command('unset [file]')
   .describe('Unsets the keyboard shortcuts as defined in the specified file')
-  .option('-s, --script', 'Prints a bash script')
-  .action(async function (file: any, {
-  script
-}: any) {
+  .option('-s, --script', 'Prints a shell script', false)
+  .action(async function (file: string, { script }: { script: boolean }) {
     await unset(file, script)
   })
   .example('unset shortcuts.json')
