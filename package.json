@@ -25,7 +25,7 @@
   "scripts": {
     "build": "yarn run clean && tsc",
     "clean": "rimraf '*.log' lib",
-    "docs": "markdown-interpolate README.md",
+    "docs": "yarn run build && markdown-interpolate README.md",
     "fix": "eslint --fix 'src/**/*.ts'",
     "lint": "eslint 'src/**/*.ts'",
     "prepublishOnly": "yarn run build",
