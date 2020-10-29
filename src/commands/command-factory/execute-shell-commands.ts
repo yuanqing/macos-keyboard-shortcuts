@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import * as childProcess from 'child_process'
 import * as pEachSeries from 'p-each-series'
 
