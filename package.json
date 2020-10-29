@@ -33,13 +33,11 @@
     "watch": "yarn run clean && tsc --watch"
   },
   "dependencies": {
-    "fs-extra": "^9.0.1",
     "get-stdin": "^8.0.0",
     "p-each-series": "^2.1.0",
     "sade": "^1.7.4"
   },
   "devDependencies": {
-    "@types/fs-extra": "^9.0.2",
     "@types/node": "^14.14.5",
     "@types/sade": "^1.7.2",
     "eslint": "^7.12.1",

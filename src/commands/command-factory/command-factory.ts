@@ -1,4 +1,4 @@
-import * as fs from 'fs-extra'
+import * as fs from 'fs'
 import * as getStdin from 'get-stdin'
 
 import { KeyboardShortcut } from '../../types'
@@ -12,12 +12,12 @@ export function commandFactory(
   ) => Array<string>
 ) {
   return async function set(file: string, script: boolean): Promise<void> {
-    if (typeof file !== 'undefined' && (await fs.pathExists(file)) === false) {
+    if (typeof file !== 'undefined' && fs.existsSync(file) === false) {
       throw new Error('File does not exist')
     }
     const json =
       typeof file !== 'undefined'
-        ? await fs.readFile(file, 'utf8')
+        ? fs.readFileSync(file, 'utf8')
         : await getStdin()
     const keyboardShortcuts = await parseConfig(JSON.parse(json))
     const shellCommands = createShellCommands(keyboardShortcuts)
