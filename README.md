@@ -40,42 +40,23 @@ See that:
 
 ## Usage
 
-<!-- ``` markdown-interpolate: node lib/cli.js set --help -->
+<!-- ``` markdown-interpolate: node lib/cli.js --help -->
 ```
-
-  Description
-    Sets the keyboard shortcuts as defined in the specified file
 
   Usage
-    $ macos-keyboard-shortcuts set [file] [options]
+    $ macos-keyboard-shortcuts <command> [options]
+
+  Available Commands
+    set      Sets the keyboard shortcuts as defined in the specified file
+    unset    Unsets the keyboard shortcuts as defined in the specified file
+
+  For more info, run any command with the `--help` flag
+    $ macos-keyboard-shortcuts set --help
+    $ macos-keyboard-shortcuts unset --help
 
   Options
-    -s, --script    Prints a shell script  (default false)
-    -h, --help      Displays this message
-
-  Examples
-    $ macos-keyboard-shortcuts set shortcuts.json
-    $ macos-keyboard-shortcuts set shortcuts.json --script
-
-```
-<!-- ``` end -->
-
-<!-- ``` markdown-interpolate: node lib/cli.js unset --help -->
-```
-
-  Description
-    Unsets the keyboard shortcuts as defined in the specified file
-
-  Usage
-    $ macos-keyboard-shortcuts unset [file] [options]
-
-  Options
-    -s, --script    Prints a shell script  (default false)
-    -h, --help      Displays this message
-
-  Examples
-    $ macos-keyboard-shortcuts unset shortcuts.json
-    $ macos-keyboard-shortcuts unset shortcuts.json --script
+    -v, --version    Displays current version
+    -h, --help       Displays this message
 
 ```
 <!-- ``` end -->
