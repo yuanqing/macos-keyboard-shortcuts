@@ -1,5 +1,5 @@
+import { Config, KeyboardShortcut, MenuConfig } from '../../../types'
 import { resolveAppBundleId } from './resolve-app-bundle-id'
-import { Config, KeyboardShortcut, MenuConfig } from './types'
 
 export async function parseConfig(
   config: Config

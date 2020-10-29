@@ -1,10 +1,10 @@
 import * as fs from 'fs-extra'
 import * as getStdin from 'get-stdin'
 
+import { KeyboardShortcut } from '../../types'
 import { executeShellCommands } from './execute-shell-commands'
 import { outputShellCommands } from './output-shell-commands'
-import { parseConfig } from './parse-config'
-import { KeyboardShortcut } from './types'
+import { parseConfig } from './parse-config/parse-config'
 
 export function commandFactory(
   createShellCommands: (

@@ -2,8 +2,8 @@
 
 import * as sade from 'sade'
 
-import { set } from './set'
-import { unset } from './unset'
+import { set } from './commands/set'
+import { unset } from './commands/unset'
 
 sade('macos-keyboard-shortcuts')
   .command('set [file]')

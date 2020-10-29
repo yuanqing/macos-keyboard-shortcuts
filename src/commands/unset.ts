@@ -1,6 +1,6 @@
-import { commandFactory } from './command-factory'
+import { KeyboardShortcut } from '../types'
+import { commandFactory } from './command-factory/command-factory'
 import { DEFAULTS_KEY } from './constants'
-import { KeyboardShortcut } from './types'
 
 export const unset = commandFactory(function (
   keyboardShortcuts: Array<KeyboardShortcut>
