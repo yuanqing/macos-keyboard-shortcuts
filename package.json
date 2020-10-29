@@ -1,6 +1,6 @@
 {
   "name": "macos-keyboard-shortcuts",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A CLI to set application-specific keyboard shortcuts for macOS",
   "keywords": [
     "keyboard",
