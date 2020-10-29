@@ -35,7 +35,7 @@ Set 11 keyboard shortcuts
 
 See that:
 
-- The path to each menu item is specified via a nested JSON object. The root keys correspond to the macOS applications names.
+- The path to each menu item is specified via a nested JSON object. The root keys are macOS applications names.
 - The keyboard keys in each shortcut are separated by a space. Use `cmd`, `ctrl`, `opt`, and `shift` for modifier keys, and `up`, `down`, `left`, and `right` for arrow keys.
 
 ## Usage
