@@ -9,7 +9,7 @@ export async function resolveAppBundleId(appName: string): Promise<string> {
         reject(error)
         return
       }
-      resolve(result.join(''))
+      resolve(result.join('').trim())
     })
     if (child.stdout === null) {
       throw new Error('Invariant violation')
